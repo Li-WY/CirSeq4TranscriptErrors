@@ -1,10 +1,9 @@
-#1.For Fig.4
-python get_distance_1.py PTC_ann errors_coverages  cds.gff 100 > distance_frequency_1
+Souce data for regression analysis (individual data points)
+nonsense_frequency_raw.txt
+nonsense_frequency_ratio_raw.txt
+nonsense_frequency_oneoffs_raw.txt
 
-#2.For Fig.S2
-python get_distance_2.py PTC_ann all_errors_ann errors_coverages cds.gff   100 > distance_frequency_2
-
-#3.For Fig.S3
-python get_distance_3.py PTC_ann errors_coverages cds.gff cds.fa  100 > distance_frequency_3
-
-#errors_coverages are based on the first 5 columns of list_of_errors, loci in each biological replicate are unique.
+Souce data for visualization (sliding window analysis)
+Figure 4A:  nonsense_frequency.txt
+Figure 4—figure supplement 1: nonsense_frequency_ratio.txt
+Figure 4—figure supplement 2: nonsense_frequency_oneoffs.txt
