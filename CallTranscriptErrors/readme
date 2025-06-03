@@ -39,6 +39,8 @@ python reads_quality_filter.py aln.sam > tmp2.sam
 
 #11.Retain reads with a full match
 awk '{if($6!~/I|D|S/)print}' tmp2.sam > tmp3.sam
+#Optional filter for sequencing error-prone reads: Remove consensus reads with >3 mismatches.
+samtools view -h tmp2.sam | awk 'BEGIN{OFS="\t"} $0 ~ /^@/ {print; next} $6 !~ /I|D|S/ && $12 ~ /^NM:i:/ && int(substr($12,6)) <= 3' > tmp3.sam
 
 #12.Retain reads with uniq hits and reformat into bam format
 samtools view -q 1 -bS tmp3.sam > aln.bam
